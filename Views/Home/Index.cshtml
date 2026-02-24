@@ -1,0 +1,118 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- HERO SECTION -->
+<div class="hero-section text-white text-center d-flex align-items-center justify-content-center">
+    <div>
+        <h1 class="display-4 fw-bold">
+            Empowering Growth through<br />
+            Knowledge Exchange
+        </h1>
+
+        <p class="lead mt-3">
+            A global platform where professionals swap expertise to fuel
+            mutual success and bridge the accessibility gap in learning.
+        </p>
+
+        <a asp-controller="Account" asp-action="Register"
+           class="btn btn-primary btn-lg mt-3 px-4">
+            Join Our Mission
+        </a>
+    </div>
+</div>
+
+<!-- OUR STORY SECTION -->
+<div class="container my-5">
+    <div class="row align-items-center">
+
+        <div class="col-md-6">
+            <h3 class="fw-bold">Our Story</h3>
+
+            <p class="text-primary">
+                Born from the belief that everyone has a skill worth sharing,
+                Skill Swap bridges the gap between those who want to teach and
+                those who want to learn. Our platform fosters a community of
+                lifelong learners committed to professional excellence.
+            </p>
+
+            <p>
+                We realized that the best mentorship often happens peer-to-peer.
+                By removing the financial barriers to high-level education,
+                we've created an ecosystem where value is measured in knowledge
+                rather than currency.
+            </p>
+        </div>
+
+        <div class="col-md-6 text-center">
+            <img src="~/images/story.jpg"
+                 class="img-fluid rounded-4 shadow"
+                 alt="Story Image" />
+        </div>
+    </div>
+</div>
+
+<!-- CORE VALUES SECTION -->
+<div class="bg-light py-5">
+    <div class="container text-center">
+        <h3 class="fw-bold">Core Values</h3>
+        <p class="text-muted">
+            The principles that guide every interaction on our platform.
+        </p>
+
+        <div class="row mt-4">
+
+            <div class="col-md-4">
+                <div class="card p-4 shadow-sm border-0 rounded-4">
+                    <h5 class="fw-bold">Community</h5>
+                    <p class="text-muted">
+                        Building bridges between experts and learners globally.
+                        We believe we are stronger together.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-4 shadow-sm border-0 rounded-4">
+                    <h5 class="fw-bold">Growth</h5>
+                    <p class="text-muted">
+                        Prioritizing continuous personal and professional
+                        development through active knowledge sharing.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card p-4 shadow-sm border-0 rounded-4">
+                    <h5 class="fw-bold">Trust</h5>
+                    <p class="text-muted">
+                        Ensuring a safe and reliable environment for every swap
+                        through verified profiles and community reviews.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- CTA SECTION -->
+<div class="cta-section text-white text-center py-5">
+    <div class="container">
+        <h3 class="fw-bold">Ready to start your journey?</h3>
+        <p>
+            Join thousands of professionals who are already swapping skills
+            and growing their careers together.
+        </p>
+
+        <a asp-controller="Account" asp-action="Register"
+           class="btn btn-light px-4 me-2">
+            Get Started Now
+        </a>
+
+        <a asp-controller="Skill" asp-action="Browse"
+           class="btn btn-outline-light px-4">
+            Browse Skills
+        </a>
+    </div>
+</div>
