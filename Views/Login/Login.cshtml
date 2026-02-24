@@ -1,0 +1,156 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Skill Swap - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-screen">
+
+    <div class="flex h-screen">
+
+        <!-- LEFT SIDE IMAGE -->
+        <div class="hidden md:flex w-1/2 relative">
+            <img src="/images/login.jpg" class="w-full h-full object-cover" />
+
+            <div class="absolute bottom-16 left-12 text-white">
+                <h1 class="text-4xl font-bold mb-4">
+                    Unlock your creative potential.
+                </h1>
+                <p class="max-w-md text-lg">
+                    Join millions of learners and creators to find what fascinates
+                    you and take the next step in your creative journey.
+                </p>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE LOGIN -->
+        <div class="flex w-full md:w-1/2 items-center justify-center px-8">
+            <div class="w-full max-w-md">
+
+                <!-- Logo -->
+                <div class="flex items-center gap-2 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="w-6 h-6 text-blue-600"
+                         fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M4 7h16M4 17h16M10 3l4 4-4 4M14 13l-4 4 4 4" />
+                    </svg>
+                    <h2 class="text-2xl font-bold text-blue-600">
+                        Skill Swap
+                    </h2>
+                </div>
+
+                <h1 class="text-3xl font-bold mb-2">Welcome</h1>
+                <p class="text-gray-500 mb-6">
+                    Please enter your details to sign in.
+                </p>
+
+                <!-- FORM -->
+                <form method="post" asp-action="Login">
+
+                    <!-- Email -->
+                    <div class="mb-4">
+                        <label class="block font-medium mb-2">
+                            Email Address
+                        </label>
+                        <div class="flex items-center bg-gray-100 rounded-md px-3">
+                            <svg class="w-5 h-5 text-gray-400 mr-2"
+                                 fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M16 12H8m8 4H8m8-8H8m12 10V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12" />
+                            </svg>
+                            <input type="email"
+                                   name="email"
+                                   placeholder="name@company.com"
+                                   class="w-full bg-transparent py-3 focus:outline-none"
+                                   required />
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-2">
+                        <label class="block font-medium mb-2">
+                            Password
+                        </label>
+                        <div class="flex items-center bg-gray-100 rounded-md px-3">
+                            <svg class="w-5 h-5 text-gray-400 mr-2"
+                                 fill="none" stroke="currentColor"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M12 11c1.656 0 3-1.344 3-3S13.656 5 12 5s-3 1.344-3 3 1.344 3 3 3z" />
+                            </svg>
+                            <input type="password"
+                                   name="password"
+                                   placeholder="******"
+                                   class="w-full bg-transparent py-3 focus:outline-none"
+                                   required />
+                        </div>
+
+                        <div class="text-right mt-2">
+                            <a href="#" class="text-blue-600 text-sm font-medium">
+                                Forget Password?
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Remember -->
+                    <div class="flex items-center mt-4 mb-6">
+                        <input type="checkbox"
+                               class="mr-2 accent-blue-600">
+                        <span class="text-gray-600 text-sm">
+                            Keep me logged in
+                        </span>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button type="submit"
+                            class="w-full bg-blue-600 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition">
+                        Log In →
+                    </button>
+
+                </form>
+
+                <!-- Divider -->
+                <div class="flex items-center my-6">
+                    <div class="flex-grow border-t"></div>
+                    <span class="mx-4 text-gray-500 text-sm">
+                        OR LOG IN WITH
+                    </span>
+                    <div class="flex-grow border-t"></div>
+                </div>
+
+                <!-- Google Button -->
+                <button class="w-full bg-gray-100 py-3 rounded-md flex items-center justify-center gap-3 hover:bg-gray-200 transition">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                         class="w-5">
+                    Continue with Google
+                </button>
+
+                <p class="text-center mt-6 text-gray-600">
+                    Don’t have an account?
+                    <a href="/Account/Register"
+                       class="text-blue-600 font-semibold">
+                        Create an account
+                    </a>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

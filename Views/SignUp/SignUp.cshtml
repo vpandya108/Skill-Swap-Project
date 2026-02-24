@@ -1,0 +1,150 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Skill Swap - Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-screen">
+
+    <div class="flex h-screen">
+
+        <!-- LEFT SIDE -->
+        <div class="hidden md:flex w-1/2 relative text-white
+                bg-gradient-to-br from-green-900 via-green-800 to-black p-16 flex-col justify-between">
+
+            <!-- Logo -->
+            <div>
+                <h2 class="text-2xl font-bold text-blue-500">◈ SkillSwap</h2>
+
+                <h1 class="text-5xl font-bold mt-10 leading-tight">
+                    Master New <span class="text-blue-500">Skills</span> Today.
+                </h1>
+
+                <p class="mt-6 text-gray-300 max-w-lg">
+                    Join over 500,000+ professionals learning, sharing, and
+                    growing their careers on the world's most innovative platform.
+                </p>
+
+                <!-- Feature Boxes -->
+                <div class="flex gap-6 mt-12">
+
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl w-60">
+                        <h3 class="font-semibold text-lg">Expert Instructors</h3>
+                        <p class="text-sm text-gray-300 mt-2">
+                            Learn from industry leaders
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-xl w-60">
+                        <h3 class="font-semibold text-lg">Global Community</h3>
+                        <p class="text-sm text-gray-300 mt-2">
+                            Connect with peers worldwide
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="flex w-full md:w-1/2 items-center justify-center px-10 bg-gray-100">
+
+            <div class="w-full max-w-md">
+
+                <h1 class="text-4xl font-bold mb-2">Join the community</h1>
+                <p class="text-gray-600 mb-8">
+                    Start your learning journey with Skill Swap today
+                </p>
+
+                <form method="post" asp-action="Register" class="space-y-6">
+
+                    <!-- Full Name -->
+                    <div>
+                        <label class="block font-medium mb-2">Full Name</label>
+                        <input type="text"
+                               name="fullname"
+                               placeholder="Enter your full name"
+                               class="w-full bg-gray-200 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                               required />
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label class="block font-medium mb-2">Email Address</label>
+                        <input type="email"
+                               name="email"
+                               placeholder="name@company.com"
+                               class="w-full bg-gray-200 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                               required />
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <label class="block font-medium mb-2">Password</label>
+                        <input type="password"
+                               name="password"
+                               placeholder="******"
+                               class="w-full bg-gray-200 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                               required />
+                    </div>
+
+                    <!-- Primary Skill -->
+                    <div>
+                        <label class="block font-medium mb-2">Primary Skill</label>
+                        <select name="skill"
+                                class="w-full bg-gray-200 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                required>
+                            <option value="">Select your area of expertise</option>
+                            <option>Web Development</option>
+                            <option>Graphic Design</option>
+                            <option>Digital Marketing</option>
+                            <option>Data Science</option>
+                            <option>UI/UX Design</option>
+                        </select>
+                    </div>
+
+                    <!-- Create Account Button -->
+                    <button type="submit"
+                            class="w-full bg-blue-600 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition">
+                        Create Account →
+                    </button>
+
+                </form>
+
+                <!-- Divider -->
+                <div class="flex items-center my-6">
+                    <div class="flex-grow border-t"></div>
+                    <span class="mx-4 text-gray-500 text-sm">
+                        Or Sign up with
+                    </span>
+                    <div class="flex-grow border-t"></div>
+                </div>
+
+                <!-- Google Button -->
+                <button class="w-full bg-gray-300 py-3 rounded-md font-semibold hover:bg-gray-400 transition">
+                    Google
+                </button>
+
+                <p class="text-center mt-6 text-gray-600">
+                    Already have an account?
+                    <a href="/Account/Login"
+                       class="text-blue-600 font-semibold">
+                        login here
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
