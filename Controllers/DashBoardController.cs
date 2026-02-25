@@ -8,5 +8,9 @@ namespace Skill_Swap_Project.Controllers
         {
             return View();
         }
+        public IActionResult Explore()
+        {
+            return View();
+        }
     }
 }
