@@ -1,0 +1,147 @@
+﻿@{
+    ViewData["Title"] = "How It Works";
+}
+
+<!-- HERO SECTION -->
+<section class="text-center py-16 bg-white">
+    <h1 class="text-4xl md:text-5xl font-bold">
+        Master New Skills through Exchange
+    </h1>
+
+    <p class="mt-4 text-blue-600 max-w-2xl mx-auto">
+        Skill Swap connects experts and learners for mutual growth.
+        No money, just pure knowledge sharing.
+        Learn how you can start your journey today.
+    </p>
+</section>
+
+
+<!-- 4 STEP JOURNEY -->
+<section class="py-16 bg-gray-50 text-center">
+
+    <h2 class="text-3xl font-bold mb-12">
+        The 4-Step Journey
+    </h2>
+
+    <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 px-6">
+
+        <!-- Step 1 -->
+        <div>
+            <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 flex items-center justify-center rounded-full text-2xl font-bold">
+                1
+            </div>
+            <h3 class="mt-6 text-xl font-semibold">Create Profile</h3>
+            <p class="mt-2 text-gray-600">
+                Set up your professional profile. Tell the community who you are.
+            </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div>
+            <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 flex items-center justify-center rounded-full text-2xl font-bold">
+                2
+            </div>
+            <h3 class="mt-6 text-xl font-semibold">List Skills</h3>
+            <p class="mt-2 text-gray-600">
+                Define your expertise and learning goals.
+            </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div>
+            <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 flex items-center justify-center rounded-full text-2xl font-bold">
+                3
+            </div>
+            <h3 class="mt-6 text-xl font-semibold">Find a Match</h3>
+            <p class="mt-2 text-gray-600">
+                Our system suggests the best partners for knowledge exchange.
+            </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div>
+            <div class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 flex items-center justify-center rounded-full text-2xl font-bold">
+                4
+            </div>
+            <h3 class="mt-6 text-xl font-semibold">Start Swapping</h3>
+            <p class="mt-2 text-gray-600">
+                Message, schedule, and begin your exchange.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- WHY SKILL SWAPPING SECTION -->
+<section class="py-20 bg-black text-white">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-center">
+
+        <!-- Left Content -->
+        <div>
+            <h2 class="text-3xl font-bold mb-6">
+                Why Skill-Swapping?
+            </h2>
+
+            <p class="text-gray-300">
+                Traditional education costs a fortune.
+                Experience is free when shared.
+                Unlock your full potential through collaborative learning.
+            </p>
+        </div>
+
+        <!-- Right Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+            <div class="bg-gradient-to-br from-green-900 to-green-700 p-6 rounded-2xl">
+                <h3 class="text-xl font-semibold">Zero Cost</h3>
+                <p class="text-gray-200 mt-2">
+                    Knowledge is the only currency you need.
+                </p>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-900 to-green-700 p-6 rounded-2xl">
+                <h3 class="text-xl font-semibold">Global Network</h3>
+                <p class="text-gray-200 mt-2">
+                    Connect with professionals worldwide.
+                </p>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-900 to-green-700 p-6 rounded-2xl">
+                <h3 class="text-xl font-semibold">Verified Experts</h3>
+                <p class="text-gray-200 mt-2">
+                    Peer-reviewed high-quality exchanges.
+                </p>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-900 to-green-700 p-6 rounded-2xl">
+                <h3 class="text-xl font-semibold">True Community</h3>
+                <p class="text-gray-200 mt-2">
+                    Build lasting professional relationships.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CTA SECTION -->
+<section class="py-20 bg-blue-100 text-center">
+    <h2 class="text-3xl font-bold mb-10">
+        Ready to start your first swap?
+    </h2>
+
+    <div class="space-x-4">
+        <a asp-controller="Account" asp-action="Register"
+           class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+            Get Started Now
+        </a>
+
+        <a asp-controller="Skill" asp-action="Browse"
+           class="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition">
+            Explore Skills
+        </a>
+    </div>
+</section>

@@ -8,9 +8,10 @@ namespace Skill_Swap_Project.Controllers
         {
             return View();
         }
-        public IActionResult Explore()
+        [HttpPost]
+        public IActionResult Exploreview()
         {
-            return View();
+            return RedirectToAction("Explore", "Exploreview");
         }
     }
 }

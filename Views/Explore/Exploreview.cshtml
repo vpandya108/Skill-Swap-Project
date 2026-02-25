@@ -1,0 +1,136 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Explore - Skill Swap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md flex flex-col justify-between">
+        <div>
+            <div class="p-6 border-b">
+                <h2 class="text-2xl font-bold text-blue-600">SkillSwap</h2>
+            </div>
+
+            <nav class="p-6 space-y-4">
+                <a href="#" class="block text-gray-700 hover:text-blue-600 font-medium">
+                    🔒 Privacy
+                </a>
+
+                <a href="#" class="block text-gray-700 hover:text-blue-600 font-medium">
+                    🔔 Notifications
+                </a>
+            </nav>
+        </div>
+
+        <div class="p-6 border-t">
+            <a href="/Account/Login"
+               class="block text-red-500 font-semibold hover:text-red-600">
+                🚪 Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col">
+
+        <!-- Top Navbar -->
+        <nav class="bg-white shadow-md p-4 flex justify-end space-x-8">
+            <a href="/Home/Explore" class="text-blue-600 font-semibold">
+                🌍 Explore
+            </a>
+            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">
+                🔄 My Swaps
+            </a>
+            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">
+                💬 Messages
+            </a>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="p-10">
+
+            <!-- Search Section -->
+            <div class="mb-8 flex justify-between items-center">
+                <h1 class="text-3xl font-bold">Explore Skills</h1>
+
+                <input type="text"
+                       placeholder="Search by skill..."
+                       class="px-4 py-2 border rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <!-- User Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- User Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+
+                    <div class="flex flex-col items-center text-center">
+                        <img src="https://via.placeholder.com/120"
+                             class="rounded-full w-28 h-28 object-cover mb-4 shadow">
+
+                        <h2 class="text-xl font-semibold">Rahul Sharma</h2>
+
+                        <p class="text-green-600 mt-3 font-medium">
+                            Teaches: Web Development
+                        </p>
+
+                        <p class="text-purple-600 mt-1 font-medium">
+                            Wants: Data Science
+                        </p>
+
+                        <span class="mt-3 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
+                            Certified Developer 🏅
+                        </span>
+
+                        <button class="mt-5 bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition">
+                            🔄 Send Swap Request
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- Another User Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+
+                    <div class="flex flex-col items-center text-center">
+                        <img src="https://via.placeholder.com/120"
+                             class="rounded-full w-28 h-28 object-cover mb-4 shadow">
+
+                        <h2 class="text-xl font-semibold">Ananya Patel</h2>
+
+                        <p class="text-green-600 mt-3 font-medium">
+                            Teaches: Graphic Design
+                        </p>
+
+                        <p class="text-purple-600 mt-1 font-medium">
+                            Wants: Public Speaking
+                        </p>
+
+                        <span class="mt-3 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
+                            Adobe Certified 🏅
+                        </span>
+
+                        <button class="mt-5 bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition">
+                            🔄 Send Swap Request
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
