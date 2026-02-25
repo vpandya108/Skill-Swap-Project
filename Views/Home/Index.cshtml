@@ -3,40 +3,41 @@
 }
 
 <!-- HERO SECTION -->
-<div class="hero-section text-white text-center d-flex align-items-center justify-content-center">
-    <div>
-        <h1 class="display-4 fw-bold">
-            Empowering Growth through<br />
+<section class="bg-blue-600 text-white text-center py-24">
+    <div class="max-w-4xl mx-auto px-6">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+            Empowering Growth through <br />
             Knowledge Exchange
         </h1>
 
-        <p class="lead mt-3">
+        <p class="mt-6 text-lg text-blue-100">
             A global platform where professionals swap expertise to fuel
             mutual success and bridge the accessibility gap in learning.
         </p>
 
         <a asp-controller="Account" asp-action="Register"
-           class="btn btn-primary btn-lg mt-3 px-4">
+           class="inline-block mt-8 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
             Join Our Mission
         </a>
     </div>
-</div>
+</section>
+
 
 <!-- OUR STORY SECTION -->
-<div class="container my-5">
-    <div class="row align-items-center">
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
-        <div class="col-md-6">
-            <h3 class="fw-bold">Our Story</h3>
+        <div>
+            <h3 class="text-3xl font-bold mb-4">Our Story</h3>
 
-            <p class="text-primary">
+            <p class="text-blue-600 mb-4">
                 Born from the belief that everyone has a skill worth sharing,
                 Skill Swap bridges the gap between those who want to teach and
                 those who want to learn. Our platform fosters a community of
                 lifelong learners committed to professional excellence.
             </p>
 
-            <p>
+            <p class="text-gray-700">
                 We realized that the best mentorship often happens peer-to-peer.
                 By removing the financial barriers to high-level education,
                 we've created an ecosystem where value is measured in knowledge
@@ -44,75 +45,77 @@
             </p>
         </div>
 
-        <div class="col-md-6 text-center">
-            <img src="~/images/story.jpg"
-                 class="img-fluid rounded-4 shadow"
+        <div class="text-center">
+            <img src="~/images/flower.jpg"
+                 class="rounded-2xl shadow-lg mx-auto"
                  alt="Story Image" />
         </div>
+
     </div>
-</div>
+</section>
+
 
 <!-- CORE VALUES SECTION -->
-<div class="bg-light py-5">
-    <div class="container text-center">
-        <h3 class="fw-bold">Core Values</h3>
-        <p class="text-muted">
+<section class="bg-gray-100 py-16">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h3 class="text-3xl font-bold">Core Values</h3>
+        <p class="text-gray-600 mt-2">
             The principles that guide every interaction on our platform.
         </p>
 
-        <div class="row mt-4">
+        <div class="grid md:grid-cols-3 gap-8 mt-10">
 
-            <div class="col-md-4">
-                <div class="card p-4 shadow-sm border-0 rounded-4">
-                    <h5 class="fw-bold">Community</h5>
-                    <p class="text-muted">
-                        Building bridges between experts and learners globally.
-                        We believe we are stronger together.
-                    </p>
-                </div>
+            <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+                <h5 class="text-xl font-bold mb-2">Community</h5>
+                <p class="text-gray-600">
+                    Building bridges between experts and learners globally.
+                    We believe we are stronger together.
+                </p>
             </div>
 
-            <div class="col-md-4">
-                <div class="card p-4 shadow-sm border-0 rounded-4">
-                    <h5 class="fw-bold">Growth</h5>
-                    <p class="text-muted">
-                        Prioritizing continuous personal and professional
-                        development through active knowledge sharing.
-                    </p>
-                </div>
+            <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+                <h5 class="text-xl font-bold mb-2">Growth</h5>
+                <p class="text-gray-600">
+                    Prioritizing continuous personal and professional
+                    development through active knowledge sharing.
+                </p>
             </div>
 
-            <div class="col-md-4">
-                <div class="card p-4 shadow-sm border-0 rounded-4">
-                    <h5 class="fw-bold">Trust</h5>
-                    <p class="text-muted">
-                        Ensuring a safe and reliable environment for every swap
-                        through verified profiles and community reviews.
-                    </p>
-                </div>
+            <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+                <h5 class="text-xl font-bold mb-2">Trust</h5>
+                <p class="text-gray-600">
+                    Ensuring a safe and reliable environment for every swap
+                    through verified profiles and community reviews.
+                </p>
             </div>
 
         </div>
     </div>
-</div>
+</section>
+
 
 <!-- CTA SECTION -->
-<div class="cta-section text-white text-center py-5">
-    <div class="container">
-        <h3 class="fw-bold">Ready to start your journey?</h3>
-        <p>
+<section class="bg-blue-700 text-white text-center py-16">
+    <div class="max-w-4xl mx-auto px-6">
+        <h3 class="text-3xl font-bold">
+            Ready to start your journey?
+        </h3>
+
+        <p class="mt-4 text-blue-100">
             Join thousands of professionals who are already swapping skills
             and growing their careers together.
         </p>
 
-        <a asp-controller="Account" asp-action="Register"
-           class="btn btn-light px-4 me-2">
-            Get Started Now
-        </a>
+        <div class="mt-8 space-x-4">
+            <a asp-controller="Account" asp-action="Register"
+               class="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition">
+                Get Started Now
+            </a>
 
-        <a asp-controller="Skill" asp-action="Browse"
-           class="btn btn-outline-light px-4">
-            Browse Skills
-        </a>
+            <a asp-controller="Skill" asp-action="Browse"
+               class="border border-white px-6 py-3 rounded-lg hover:bg-blue-800 transition">
+                Browse Skills
+            </a>
+        </div>
     </div>
-</div>
+</section>
