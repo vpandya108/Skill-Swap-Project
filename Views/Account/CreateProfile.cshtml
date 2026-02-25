@@ -12,28 +12,29 @@
 
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
 
-    <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-xl">
+    <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-2xl">
 
         <h1 class="text-3xl font-bold mb-2">Complete Your Profile</h1>
         <p class="text-gray-600 mb-6">
-            Tell the community more about yourself
+            Tell the community more about your skills
         </p>
 
-        <form method="post" asp-action="CreateProfile" class="space-y-6">
+        <form method="post" asp-action="CreateProfile" enctype="multipart/form-data" class="space-y-6">
 
             <!-- Profile Photo -->
             <div>
                 <label class="block font-medium mb-2">Profile Photo</label>
                 <input type="file"
+                       name="profilePhoto"
                        class="w-full border p-2 rounded-md bg-gray-100">
             </div>
 
-            <!-- Bio -->
+            <!-- Short Bio -->
             <div>
                 <label class="block font-medium mb-2">Short Bio</label>
                 <textarea name="bio"
                           placeholder="Tell us about yourself..."
-                          class="w-full bg-gray-100 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          class="w-full bg-gray-100 p-3 rounded-md rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                           rows="4"></textarea>
             </div>
 
@@ -46,13 +47,30 @@
                        class="w-full bg-gray-100 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
 
-            <!-- Skills -->
+            <!-- Skill I Teach -->
             <div>
-                <label class="block font-medium mb-2">Skills You Offer</label>
+                <label class="block font-medium mb-2">Skill I Teach</label>
                 <input type="text"
-                       name="skills"
+                       name="skillTeach"
                        placeholder="Example: Web Development, Photoshop"
-                       class="w-full bg-gray-100 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                       class="w-full bg-gray-100 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+
+            <!-- Certification Upload -->
+            <div>
+                <label class="block font-medium mb-2">Upload Certification</label>
+                <input type="file"
+                       name="certificate"
+                       class="w-full border p-2 rounded-md bg-gray-100">
+            </div>
+
+            <!-- Skill I Want to Learn -->
+            <div>
+                <label class="block font-medium mb-2">Skill I Want to Learn</label>
+                <input type="text"
+                       name="skillLearn"
+                       placeholder="Example: Data Science, Public Speaking"
+                       class="w-full bg-gray-100 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
             </div>
 
             <button type="submit"
