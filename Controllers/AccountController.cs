@@ -8,5 +8,13 @@ namespace Skill_Swap_Project.Controllers
         {
             return View();
         }
+
+        public IActionResult DashBoardController(string bio, string location,
+                                           string skillTeach, string skillLearn)
+        {
+
+
+            return RedirectToAction("DashBoardview", "DashBoard");
+        }
     }
 }
