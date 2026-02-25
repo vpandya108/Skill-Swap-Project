@@ -1,0 +1,117 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Profile - Skill Swap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Top Navbar -->
+    <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+        <h2 class="text-2xl font-bold text-blue-600">SkillSwap</h2>
+
+        <a asp-controller="Home"
+           asp-action="Explore"
+           class="bg-gray-300 px-4 py-2 rounded-md hover:bg-gray-400 transition">
+            🔙 Back to Explore
+        </a>
+    </nav>
+
+    <!-- Main Profile Section -->
+    <div class="max-w-6xl mx-auto mt-10 bg-white shadow-2xl rounded-2xl p-10">
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <!-- LEFT SIDE -->
+            <div class="text-center border-r pr-6">
+
+                <img src="https://via.placeholder.com/200"
+                     class="w-48 h-48 rounded-full mx-auto shadow-lg object-cover mb-6">
+
+                <h2 class="text-3xl font-bold">Rahul Sharma</h2>
+
+                <p class="text-gray-500 mt-2">📍 Rajkot, Gujarat</p>
+
+                <span class="inline-block mt-4 bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm">
+                    Available for Swap
+                </span>
+
+                <div class="mt-6">
+                    <p class="text-yellow-500 text-xl">⭐⭐⭐⭐☆ (4.5)</p>
+                </div>
+
+                <!-- Stats -->
+                <div class="mt-8 flex justify-around text-center">
+                    <div>
+                        <p class="text-xl font-bold">15</p>
+                        <p class="text-gray-500 text-sm">Swaps</p>
+                    </div>
+                    <div>
+                        <p class="text-xl font-bold">8</p>
+                        <p class="text-gray-500 text-sm">Skills Learned</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="md:col-span-2 space-y-8">
+
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-3">About Me</h3>
+                    <p class="text-gray-600">
+                        Passionate web developer with 3+ years of experience in ASP.NET Core,
+                        frontend technologies and database management.
+                        I love exchanging skills and learning new technologies.
+                    </p>
+                </div>
+
+                <!-- Skills Offered -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-green-600">
+                        Skills Offered
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full">Web Development</span>
+                        <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full">ASP.NET Core</span>
+                        <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Skills Wanted -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-purple-600">
+                        Skills Wanted
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-purple-100 text-purple-700 px-4 py-1 rounded-full">Data Science</span>
+                        <span class="bg-purple-100 text-purple-700 px-4 py-1 rounded-full">Public Speaking</span>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex gap-4 mt-6">
+                    <button class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">
+                        🔄 Send Swap Request
+                    </button>
+
+                    <button class="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition">
+                        💬 Send Message
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

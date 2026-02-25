@@ -46,8 +46,10 @@
             <a href="/Home/Explore" class="text-blue-600 font-semibold">
                 🌍 Explore
             </a>
-            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">
-                🔄 My Swaps
+            <a asp-controller="MySwap"
+               asp-action="Swaps"
+               class="btn btn-primary">
+                My Swaps
             </a>
             <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">
                 💬 Messages

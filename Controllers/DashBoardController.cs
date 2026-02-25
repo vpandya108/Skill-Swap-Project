@@ -13,5 +13,11 @@ namespace Skill_Swap_Project.Controllers
         {
             return RedirectToAction("Explore", "Exploreview");
         }
+        [HttpPost]
+        public IActionResult Swaps()
+        {
+            return RedirectToAction("MySwap", "Swaps");
+        }
+
     }
 }
