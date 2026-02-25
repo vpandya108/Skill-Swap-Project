@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Create Profile - Skill Swap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-xl">
+
+        <h1 class="text-3xl font-bold mb-2">Complete Your Profile</h1>
+        <p class="text-gray-600 mb-6">
+            Tell the community more about yourself
+        </p>
+
+        <form method="post" asp-action="CreateProfile" class="space-y-6">
+
+            <!-- Profile Photo -->
+            <div>
+                <label class="block font-medium mb-2">Profile Photo</label>
+                <input type="file"
+                       class="w-full border p-2 rounded-md bg-gray-100">
+            </div>
+
+            <!-- Bio -->
+            <div>
+                <label class="block font-medium mb-2">Short Bio</label>
+                <textarea name="bio"
+                          placeholder="Tell us about yourself..."
+                          class="w-full bg-gray-100 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          rows="4"></textarea>
+            </div>
+
+            <!-- Location -->
+            <div>
+                <label class="block font-medium mb-2">Location</label>
+                <input type="text"
+                       name="location"
+                       placeholder="City, Country"
+                       class="w-full bg-gray-100 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <!-- Skills -->
+            <div>
+                <label class="block font-medium mb-2">Skills You Offer</label>
+                <input type="text"
+                       name="skills"
+                       placeholder="Example: Web Development, Photoshop"
+                       class="w-full bg-gray-100 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <button type="submit"
+                    class="w-full bg-blue-600 text-white py-3 rounded-md font-semibold hover:bg-blue-700 transition">
+                Save Profile →
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
