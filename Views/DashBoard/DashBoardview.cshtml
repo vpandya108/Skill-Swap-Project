@@ -1,0 +1,115 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard - Skill Swap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md flex flex-col justify-between">
+
+        <div>
+            <div class="p-6 border-b">
+                <h2 class="text-2xl font-bold text-blue-600">SkillSwap</h2>
+            </div>
+
+            <nav class="p-6 space-y-4">
+
+                <a href="#" class="block text-gray-700 hover:text-blue-600 font-medium">
+                    🔒 Privacy
+                </a>
+
+                <a href="#" class="block text-gray-700 hover:text-blue-600 font-medium">
+                    🔔 Notifications
+                </a>
+                <a href="#" class="block text-gray-700 hover:text-blue-600 font-medium">
+                    ⚙️ security
+                    </a>
+
+            </nav>
+        </div>
+
+        <!-- Logout at Bottom -->
+        <div class="p-6 border-t">
+            <a href="/Account/Login"
+               class="block text-red-500 font-semibold hover:text-red-600">
+                🚪 Logout
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col">
+
+        <!-- Top Navbar -->
+        <nav class="bg-white shadow-md p-4 flex justify-end space-x-8">
+            <a asp-controller="Explore" asp-action="Explore" class="btn btn-primary">
+                Explore
+            </a>
+
+            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">
+                🔄 My Swaps
+            </a>
+
+            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">
+                💬 Messages
+            </a>
+        </nav>
+
+        <!-- Dashboard Content -->
+        <div class="max-w-5xl mx-auto mt-10 p-6">
+
+            <h1 class="text-3xl font-bold mb-6">
+                Welcome, Vishva 👋
+            </h1>
+
+            <!-- Profile Card -->
+            <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col md:flex-row gap-8">
+
+                <!-- Profile Image -->
+                <div class="flex justify-center">
+                    <img src="https://via.placeholder.com/150"
+                         class="rounded-full w-40 h-40 object-cover shadow-md">
+                </div>
+
+                <!-- Profile Details -->
+                <div class="flex-1 space-y-4">
+
+                    <div>
+                        <h2 class="text-xl font-semibold text-green-600">Skill I Teach</h2>
+                        <p class="text-gray-700 mt-1">
+                            Web Development
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-semibold text-purple-600">Skill I Want to Learn</h2>
+                        <p class="text-gray-700 mt-1">
+                            Data Science
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-semibold text-blue-600">Certification</h2>
+                        <span class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mt-2">
+                            Certified Web Developer 🏅
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
