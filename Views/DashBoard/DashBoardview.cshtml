@@ -2,114 +2,345 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Dashboard - Skill Swap</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+<script src="https://cdn.tailwindcss.com"></script>
+<div class="bg-white shadow mb-6">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
 
-<body class="bg-gray-100 min-h-screen flex">
+        <!-- Left Menu -->
+        <div class="flex space-x-6 font-medium">
 
-    <!-- Sidebar -->
-    <aside class="w-64 bg-white shadow-md flex flex-col justify-between">
-
-        <div>
-            <div class="p-6 border-b">
-                <h2 class="text-2xl font-bold text-blue-600">SkillSwap</h2>
-            </div>
-
-            <nav class="p-6 space-y-4">
-
-                <a href="#" class="block text-gray-700 hover:text-blue-600 font-medium">
-                    🔒 Privacy
-                </a>
-
-                <a href="#" class="block text-gray-700 hover:text-blue-600 font-medium">
-                    🔔 Notifications
-                </a>
-                <a href="#" class="block text-gray-700 hover:text-blue-600 font-medium">
-                    ⚙️ security
-                    </a>
-
-            </nav>
-        </div>
-
-        <!-- Logout at Bottom -->
-        <div class="p-6 border-t">
-            <a href="/Account/Login"
-               class="block text-red-500 font-semibold hover:text-red-600">
-                🚪 Logout
+            <a asp-controller="Explore" asp-action="Exploreview"
+               class="text-gray-700 hover:text-blue-600">
+                Browse Skills
             </a>
-        </div>
 
-    </aside>
-
-    <!-- Main Content Area -->
-    <div class="flex-1 flex flex-col">
-
-        <!-- Top Navbar -->
-        <nav class="bg-white shadow-md p-4 flex justify-end space-x-8">
-            <a asp-controller="Explore" asp-action="Explore" class="btn btn-primary">
+            <a asp-controller="Explore" asp-action="Exploreview"
+               class="text-gray-700 hover:text-blue-600">
                 Explore
             </a>
 
-            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">
-                🔄 My Swaps
+            <a asp-controller="MySwap" asp-action="Swaps"
+               class="text-gray-700 hover:text-blue-600">
+                My Swaps
             </a>
 
-            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">
-                💬 Messages
+            <a asp-controller="Message" asp-action="Chat"
+               class="text-gray-700 hover:text-blue-600">
+                Messages
             </a>
-        </nav>
 
-        <!-- Dashboard Content -->
-        <div class="max-w-5xl mx-auto mt-10 p-6">
+        </div>
+        </div>
+        </div>
 
-            <h1 class="text-3xl font-bold mb-6">
-                Welcome, Vishva 👋
-            </h1>
 
-            <!-- Profile Card -->
-            <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col md:flex-row gap-8">
+<div class="max-w-7xl mx-auto">
 
-                <!-- Profile Image -->
-                <div class="flex justify-center">
-                    <img src="https://via.placeholder.com/150"
-                         class="rounded-full w-40 h-40 object-cover shadow-md">
+    <!-- Welcome Banner -->
+    <div class="bg-blue-600 text-white rounded-xl p-10 mb-8">
+
+        <h1 class="text-4xl font-bold mb-3">
+            Welcome to Skill Swap, Vishva!
+        </h1>
+
+        <p class="text-lg mb-6">
+            Ready to learn something new? Connect with experts around the world
+            and share your own unique passions.
+        </p>
+
+        <a asp-controller="Explore" asp-action="Explore"
+           class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold">
+            Start Learning
+        </a>
+
+    </div>
+
+
+
+    <div class="grid grid-cols-3 gap-6">
+
+        <!-- LEFT SIDE -->
+        <div class="col-span-2">
+
+            <!-- Active Swaps -->
+            <div class="bg-white rounded-xl shadow p-6 mb-6">
+
+                <div class="flex justify-between mb-4">
+
+                    <h2 class="text-xl font-semibold">
+                        My Active Swaps
+                    </h2>
+
+                    <a asp-controller="MySwaps" asp-action="Index"
+                       class="text-blue-600 text-sm">
+                        View All
+                    </a>
+
                 </div>
 
-                <!-- Profile Details -->
-                <div class="flex-1 space-y-4">
+
+                <div class="text-center py-12 text-gray-500">
+
+                    <div class="text-4xl mb-3">🤝</div>
+
+                    <p class="font-medium">
+                        No active swaps yet
+                    </p>
+
+                    <p class="text-sm mb-4">
+                        Start browsing categories to find your first match
+                        and begin exchanging knowledge!
+                    </p>
+
+                    <a asp-controller="Explore" asp-action="Explore"
+                       class="bg-gray-200 px-4 py-2 rounded">
+                        Browse Skills
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Recommended Skills -->
+            <h2 class="text-xl font-semibold mb-4">
+                Recommended Skills for You
+            </h2>
+
+
+            <div class="grid grid-cols-2 gap-6">
+
+
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl shadow">
+
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32"
+                         class="rounded-t-xl h-40 w-full object-cover">
+
+                    <div class="p-4">
+
+                        <h3 class="font-semibold text-lg">
+                            Digital Photography
+                        </h3>
+
+                        <p class="text-sm text-gray-500 mb-3">
+                            Learn manual settings, lighting, and composition from a pro.
+                        </p>
+
+                        <div class="flex justify-between items-center">
+
+                            <span class="text-sm text-gray-500">
+                                Sarah J.
+                            </span>
+
+                            <a asp-controller="Swap" asp-action="Request"
+                               class="bg-blue-600 text-white px-3 py-1 rounded">
+                                Swap My Skill
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl shadow">
+
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c"
+                         class="rounded-t-xl h-40 w-full object-cover">
+
+                    <div class="p-4">
+
+                        <h3 class="font-semibold text-lg">
+                            Python Programming
+                        </h3>
+
+                        <p class="text-sm text-gray-500 mb-3">
+                            Master automation, data analysis and backend basics.
+                        </p>
+
+                        <div class="flex justify-between items-center">
+
+                            <span class="text-sm text-gray-500">
+                                David L.
+                            </span>
+
+                            <a asp-controller="Swap" asp-action="Request"
+                               class="bg-blue-600 text-white px-3 py-1 rounded">
+                                Swap My Skill
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl shadow">
+
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c"
+                         class="rounded-t-xl h-40 w-full object-cover">
+
+                    <div class="p-4">
+
+                        <h3 class="font-semibold text-lg">
+                            Vegan Cooking
+                        </h3>
+
+                        <p class="text-sm text-gray-500 mb-3">
+                            Learn delicious plant-based recipes and nutrition tips.
+                        </p>
+
+                        <div class="flex justify-between items-center">
+
+                            <span class="text-sm text-gray-500">
+                                Elena R.
+                            </span>
+
+                            <a asp-controller="Swap" asp-action="Request"
+                               class="bg-blue-600 text-white px-3 py-1 rounded">
+                                Swap My Skill
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl shadow">
+
+                    <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+                         class="rounded-t-xl h-40 w-full object-cover">
+
+                    <div class="p-4">
+
+                        <h3 class="font-semibold text-lg">
+                            Graphic Design
+                        </h3>
+
+                        <p class="text-sm text-gray-500 mb-3">
+                            Brand identity, typography, and Adobe Creative Suite.
+                        </p>
+
+                        <div class="flex justify-between items-center">
+
+                            <span class="text-sm text-gray-500">
+                                Marc T.
+                            </span>
+
+                            <a asp-controller="Swap" asp-action="Request"
+                               class="bg-blue-600 text-white px-3 py-1 rounded">
+                                Swap My Skill
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT SIDE -->
+        <div class="space-y-6">
+
+            <!-- Skills -->
+            <div class="bg-white p-6 rounded-xl shadow">
+
+                <h3 class="font-semibold mb-4">
+                    My Skills for Swap
+                </h3>
+
+                <div class="flex justify-between items-center bg-gray-100 p-3 rounded mb-3">
+
+                    <span>Web Development</span>
+
+                    <a asp-controller="Profile" asp-action="EditSkill">
+                        ✏️
+                    </a>
+
+                </div>
+
+                <a asp-controller="Profile" asp-action="AddSkill"
+                   class="border border-dashed w-full py-2 rounded text-gray-500 block text-center">
+
+                    + Add New Skill
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Impact -->
+            <div class="bg-gray-900 text-white p-6 rounded-xl">
+
+                <h3 class="mb-4 font-semibold">
+                    Your Impact
+                </h3>
+
+                <div class="flex justify-between text-center">
 
                     <div>
-                        <h2 class="text-xl font-semibold text-green-600">Skill I Teach</h2>
-                        <p class="text-gray-700 mt-1">
-                            Web Development
+                        <p class="text-3xl font-bold">0</p>
+                        <p class="text-sm text-gray-400">
+                            Skills Learned
                         </p>
                     </div>
 
                     <div>
-                        <h2 class="text-xl font-semibold text-purple-600">Skill I Want to Learn</h2>
-                        <p class="text-gray-700 mt-1">
-                            Data Science
+                        <p class="text-3xl font-bold">1</p>
+                        <p class="text-sm text-gray-400">
+                            Skills Offered
                         </p>
                     </div>
 
-                    <div>
-                        <h2 class="text-xl font-semibold text-blue-600">Certification</h2>
-                        <span class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mt-2">
-                            Certified Web Developer 🏅
-                        </span>
-                    </div>
-
                 </div>
+
+            </div>
+
+
+
+            <!-- Recent Swaps -->
+            <div class="bg-white p-6 rounded-xl shadow">
+
+                <h3 class="font-semibold mb-4">
+                    Recent Swaps
+                </h3>
+
+                <p class="text-sm text-gray-500 mb-2">
+                    Anna learned
+                    <a asp-controller="Explore" asp-action="Explore"
+                       class="text-blue-600">Piano</a>
+                    from Lucas.
+                </p>
+
+                <p class="text-sm text-gray-500">
+                    Sam just listed
+                    <a asp-controller="Explore" asp-action="Explore"
+                       class="text-blue-600">Spanish</a>
+                    as a new skill!
+                </p>
+
             </div>
 
         </div>
 
     </div>
 
-</body>
-</html>
+</div>
