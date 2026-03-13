@@ -1,0 +1,93 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Skill Swap</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- NAVBAR -->
+    <div class="bg-white shadow-sm border-b sticky top-0 z-50">
+
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+
+            <!-- LOGO -->
+            <h1 class="text-xl font-bold text-blue-600">
+                Skill Swap
+            </h1>
+
+            <!-- MENU -->
+            <div class="flex space-x-6 font-medium">
+
+                <a asp-controller="Dashboard" asp-action="DashBoardview"
+                   class="text-gray-700 hover:text-blue-600">
+                    Dashboard
+                </a>
+
+                <a asp-controller="Explore" asp-action="Exploreview"
+                   class="text-gray-700 hover:text-blue-600">
+                    Explore
+                </a>
+
+                <a asp-controller="MySwap" asp-action="Swaps"
+                   class="text-gray-700 hover:text-blue-600">
+                    My Swaps
+                </a>
+
+                <a asp-controller="Message" asp-action="Chat"
+                   class="text-gray-700 hover:text-blue-600">
+                    Messages
+                </a>
+
+            </div>
+
+            <!-- ACCOUNT ICON -->
+            <div class="flex items-center gap-4">
+
+                <a asp-controller="Profile" asp-action="Index"
+                   class="text-gray-700 hover:text-blue-600">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="w-8 h-8"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor">
+
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M5.121 17.804A9 9 0 1118.88 17.8M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+
+                    </svg>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAGE CONTENT -->
+    <div class="max-w-7xl mx-auto p-6">
+
+        @RenderBody()
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="text-center text-gray-500 py-6">
+        © 2026 Skill Swap
+    </footer>
+
+</body>
+</html>
