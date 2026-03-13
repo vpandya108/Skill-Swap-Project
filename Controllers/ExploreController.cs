@@ -4,9 +4,9 @@ namespace Skill_Swap_Project.Controllers
 {
     public class ExploreController : Controller
     {
-        public IActionResult Explore()
+        public IActionResult Exploreview()
         {
-            return View("Exploreview");
+            return View();
         }
     }
 }
