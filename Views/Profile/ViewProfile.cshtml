@@ -1,110 +1,176 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Profile - Skill Swap</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+<script src="https://cdn.tailwindcss.com"></script>
 
-<body class="bg-gray-100 min-h-screen">
+<div class="bg-gray-100 min-h-screen p-6">
 
-    <!-- Top Navbar -->
-    <nav class="bg-white shadow-md p-4 flex justify-between items-center">
-        <h2 class="text-2xl font-bold text-blue-600">SkillSwap</h2>
+    <!-- MAIN LAYOUT -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        <a asp-controller="Home"
-           asp-action="Explore"
-           class="bg-gray-300 px-4 py-2 rounded-md hover:bg-gray-400 transition">
-            🔙 Back to Explore
-        </a>
-    </nav>
+        <!-- LEFT PROFILE CARD -->
+        <div class="bg-white rounded-xl shadow p-6 text-center">
 
-    <!-- Main Profile Section -->
-    <div class="max-w-6xl mx-auto mt-10 bg-white shadow-2xl rounded-2xl p-10">
+            <img src="https://i.pravatar.cc/100"
+                 class="mx-auto rounded-full w-24 h-24 mb-3" />
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <h2 class="text-lg font-semibold">
+                Rahul Sharma
+            </h2>
 
-            <!-- LEFT SIDE -->
-            <div class="text-center border-r pr-6">
+            <p class="text-gray-500 text-sm">
+                SkillSwap Member
+            </p>
 
-                <img src="https://via.placeholder.com/200"
-                     class="w-48 h-48 rounded-full mx-auto shadow-lg object-cover mb-6">
+            <div class="flex justify-center gap-2 mt-2 text-sm text-yellow-500">
+                ⭐ 4.8
+            </div>
 
-                <h2 class="text-3xl font-bold">Rahul Sharma</h2>
+            <p class="text-gray-400 text-sm mt-1">
+                India
+            </p>
 
-                <p class="text-gray-500 mt-2">📍 Rajkot, Gujarat</p>
+            <button class="bg-blue-600 text-white w-full mt-4 py-2 rounded-lg hover:bg-blue-700">
+                Send Swap Request
+            </button>
 
-                <span class="inline-block mt-4 bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm">
-                    Available for Swap
-                </span>
+            <button class="border w-full mt-2 py-2 rounded-lg text-gray-600">
+                Message
+            </button>
 
-                <div class="mt-6">
-                    <p class="text-yellow-500 text-xl">⭐⭐⭐⭐☆ (4.5)</p>
+            <div class="flex justify-between mt-6 text-sm">
+
+                <div>
+                    <p class="font-bold text-blue-600">42</p>
+                    <p class="text-gray-500">Swaps</p>
                 </div>
 
-                <!-- Stats -->
-                <div class="mt-8 flex justify-around text-center">
-                    <div>
-                        <p class="text-xl font-bold">15</p>
-                        <p class="text-gray-500 text-sm">Swaps</p>
-                    </div>
-                    <div>
-                        <p class="text-xl font-bold">8</p>
-                        <p class="text-gray-500 text-sm">Skills Learned</p>
-                    </div>
+                <div>
+                    <p class="font-bold text-blue-600">98%</p>
+                    <p class="text-gray-500">Response</p>
                 </div>
 
             </div>
 
-            <!-- RIGHT SIDE -->
-            <div class="md:col-span-2 space-y-8">
+        </div>
 
-                <!-- About -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-3">About Me</h3>
-                    <p class="text-gray-600">
-                        Passionate web developer with 3+ years of experience in ASP.NET Core,
-                        frontend technologies and database management.
-                        I love exchanging skills and learning new technologies.
-                    </p>
-                </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="lg:col-span-2 space-y-6">
+
+            <!-- ABOUT -->
+            <div class="bg-white rounded-xl shadow p-6">
+
+                <h2 class="font-semibold text-lg mb-2">
+                    About Rahul Sharma
+                </h2>
+
+                <p class="text-gray-600 text-sm">
+                    Passionate learner and teacher. Interested in sharing knowledge and growing together through SkillSwap.
+                </p>
+
+            </div>
+
+
+            <!-- SKILLS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 <!-- Skills Offered -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-3 text-green-600">
+                <div class="bg-white rounded-xl shadow p-6">
+
+                    <h3 class="font-semibold mb-4 text-blue-600">
                         Skills Offered
                     </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full">Web Development</span>
-                        <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full">ASP.NET Core</span>
-                        <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full">JavaScript</span>
+
+                    <div class="space-y-3">
+
+                        <div class="bg-gray-100 p-3 rounded">
+                            Web Development
+                            <span class="block text-xs text-blue-500">
+                                Expert
+                            </span>
+                        </div>
+
+                        <div class="bg-gray-100 p-3 rounded">
+                            Communication
+                            <span class="block text-xs text-blue-500">
+                                Intermediate
+                            </span>
+                        </div>
+
                     </div>
+
                 </div>
+
 
                 <!-- Skills Wanted -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-3 text-purple-600">
+                <div class="bg-white rounded-xl shadow p-6">
+
+                    <h3 class="font-semibold mb-4 text-orange-500">
                         Skills Wanted
                     </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-purple-100 text-purple-700 px-4 py-1 rounded-full">Data Science</span>
-                        <span class="bg-purple-100 text-purple-700 px-4 py-1 rounded-full">Public Speaking</span>
+
+                    <div class="space-y-3">
+
+                        <div class="bg-gray-100 p-3 rounded">
+                            Data Science
+                            <span class="block text-xs text-orange-500">
+                                Beginner
+                            </span>
+                        </div>
+
+                        <div class="bg-gray-100 p-3 rounded">
+                            UI/UX Design
+                            <span class="block text-xs text-orange-500">
+                                Intermediate
+                            </span>
+                        </div>
+
                     </div>
+
                 </div>
 
-                <!-- Buttons -->
-                <div class="flex gap-4 mt-6">
-                    <button class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">
-                        🔄 Send Swap Request
-                    </button>
+            </div>
 
-                    <button class="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition">
-                        💬 Send Message
-                    </button>
+
+            <!-- REVIEWS -->
+            <div class="bg-white rounded-xl shadow p-6">
+
+                <h3 class="font-semibold mb-4">
+                    Recent Reviews
+                </h3>
+
+                <div class="space-y-4">
+
+                    <div class="flex gap-3">
+
+                        <img src="https://i.pravatar.cc/40"
+                             class="rounded-full" />
+
+                        <div>
+                            <p class="font-medium">Marcus Chen</p>
+                            <p class="text-sm text-gray-500">
+                                Great experience learning together!
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex gap-3">
+
+                        <img src="https://i.pravatar.cc/41"
+                             class="rounded-full" />
+
+                        <div>
+                            <p class="font-medium">Elena Rodriguez</p>
+                            <p class="text-sm text-gray-500">
+                                Very professional and helpful.
+                            </p>
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -113,5 +179,4 @@
 
     </div>
 
-</body>
-</html>
+</div>
