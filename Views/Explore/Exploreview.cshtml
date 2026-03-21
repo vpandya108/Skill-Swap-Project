@@ -1,184 +1,236 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Explore - Skill Swap</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+<div class="flex">
 
-<body class="bg-gray-100 min-h-screen flex">
+    <!-- SIDEBAR -->
+    <div class="w-64 bg-white shadow-md p-5 min-h-screen">
 
-    <!-- Sidebar -->
-    <aside class="w-64 bg-white shadow-md flex flex-col justify-between">
-        <div>
-            <div class="p-6 border-b">
-                <h2 class="text-2xl font-bold text-blue-600">SkillSwap</h2>
+        <h2 class="text-xl font-bold text-blue-600 mb-6">
+            SkillSwap
+        </h2>
+
+        <ul class="space-y-4 text-gray-600">
+
+            <li>
+                <a asp-controller="Home" asp-action="Index" class="hover:text-blue-600">
+                    Home
+                </a>
+            </li>
+
+            <li class="text-blue-600 font-medium">
+                <a asp-controller="Home" asp-action="Explore">
+                    Discover
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Network" asp-action="Index" class="hover:text-blue-600">
+                    Network
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Settings" asp-action="Index" class="hover:text-blue-600">
+                    Settings
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Home" asp-action="Help" class="hover:text-blue-600">
+                    Help
+                </a>
+            </li>
+
+        </ul>
+
+        <a asp-controller="Skill" asp-action="Create"
+           class="block mt-6 w-full text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+            Post a Skill
+        </a>
+
+    </div>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="flex-1 px-6 py-6 bg-gray-100 min-h-screen">
+
+        <!-- TOP NAV -->
+        <div class="flex justify-between items-center mb-6">
+
+            <h1 class="text-2xl font-bold">
+                Explore Opportunities
+            </h1>
+
+            <div class="space-x-6 text-gray-600">
+
+
             </div>
 
-            <nav class="p-6 space-y-4">
-                <a href="#" class="block text-gray-700 hover:text-blue-600 font-medium">
-                    🔒 Privacy
-                </a>
-
-                <a href="#" class="block text-gray-700 hover:text-blue-600 font-medium">
-                    🔔 Notifications
-                </a>
-            </nav>
         </div>
 
-        <div class="p-6 border-t">
-            <a href="/Account/Login"
-               class="block text-red-500 font-semibold hover:text-red-600">
-                🚪 Logout
-            </a>
+
+        <!-- SEARCH -->
+        <input type="text"
+               placeholder="Search skills, industries, or experts..."
+               class="w-full px-4 py-2 border rounded-lg mb-4 focus:ring-2 focus:ring-blue-400 focus:outline-none" />
+
+
+        <!-- FILTERS -->
+        <div class="flex gap-3 mb-6 flex-wrap">
+
+            <button class="px-4 py-1 rounded-full text-sm bg-black text-white">
+                All Skills
+            </button>
+
+            <button class="px-4 py-1 rounded-full text-sm bg-gray-200 text-gray-600">
+                Tech
+            </button>
+
+            <button class="px-4 py-1 rounded-full text-sm bg-gray-200 text-gray-600">
+                Design
+            </button>
+
+            <button class="px-4 py-1 rounded-full text-sm bg-gray-200 text-gray-600">
+                Language
+            </button>
+
+            <button class="px-4 py-1 rounded-full text-sm bg-gray-200 text-gray-600">
+                Music
+            </button>
+
+            <button class="px-4 py-1 rounded-full text-sm bg-gray-200 text-gray-600">
+                Art
+            </button>
+
+            <button class="px-4 py-1 rounded-full text-sm bg-gray-200 text-gray-600">
+                Marketing
+            </button>
+
         </div>
-    </aside>
 
-    <!-- Main Content -->
-    <div class="flex-1 flex flex-col">
 
-        <!-- Top Navbar -->
-        <nav class="bg-white shadow-md p-4 flex justify-end space-x-8">
-            <a href="/Home/Explore" class="text-blue-600 font-semibold">
-                🌍 Explore
-            </a>
-            <a asp-controller="MySwap"
-               asp-action="Swaps"
-               class="btn btn-primary">
-                My Swaps
-            </a>
-            <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">
-                💬 Messages
-            </a>
-        </nav>
+        <!-- CARDS GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Page Content -->
-        <div class="p-10">
 
-            <!-- Search Section -->
-            <div class="mb-8 flex justify-between items-center">
-                <h1 class="text-3xl font-bold">Explore Skills</h1>
+            <!-- CARD 1 -->
+            <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
 
-                <input type="text"
-                       placeholder="Search by skill..."
-                       class="px-4 py-2 border rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <div class="flex items-center gap-3 mb-3">
+                    <img src="https://i.pravatar.cc/40?img=10" class="rounded-full" />
+                    <div>
+                        <h3 class="font-semibold">Rahul Sharma</h3>
+                        <p class="text-xs text-gray-500">Web Developer</p>
+                    </div>
+                </div>
+
+                <p class="text-xs text-gray-400">I CAN TEACH</p>
+                <div class="bg-blue-100 text-blue-600 px-3 py-1 rounded mt-1 inline-block text-sm">
+                    Web Development
+                </div>
+
+                <p class="text-xs text-gray-400 mt-3">I WANT TO LEARN</p>
+                <div class="bg-orange-100 text-orange-600 px-3 py-1 rounded mt-1 inline-block text-sm">
+                    Data Science
+                </div>
+
+                <div class="mt-4 space-y-2">
+
+                    <a asp-controller="Profile"
+                       asp-action="ViewProfile"
+                       class="block text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                        View Profile
+                    </a>
+
+                    <button class="w-full border py-2 rounded text-gray-600 hover:bg-gray-100">
+                        Send Swap Request
+                    </button>
+
+                </div>
+
             </div>
 
-            <!-- User Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- User Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+            <!-- CARD 2 -->
+            <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
 
-                    <div class="flex flex-col items-center text-center">
-                        <img src="https://via.placeholder.com/120"
-                             class="rounded-full w-28 h-28 object-cover mb-4 shadow">
-
-                        <h2 class="text-xl font-semibold">Rahul Sharma</h2>
-
-                        <p class="text-green-600 mt-3 font-medium">
-                            Teaches: Web Development
-                        </p>
-
-                        <p class="text-purple-600 mt-1 font-medium">
-                            Wants: Data Science
-                        </p>
-
-                        <span class="mt-3 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
-                            Certified Developer 🏅
-                        </span>
-
-                        <button class="mt-5 bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition">
-                            🔄 Send Swap Request
-                        </button>
-                        <a asp-controller="Profile"
-                           asp-action="ViewProfile"
-                           class="mt-3 inline-block bg-gray-600 text-white px-5 py-2 rounded-md hover:bg-gray-700 transition">
-                            👤 View Profile.
-                        </a>
+                <div class="flex items-center gap-3 mb-3">
+                    <img src="https://i.pravatar.cc/40?img=11" class="rounded-full" />
+                    <div>
+                        <h3 class="font-semibold">Ananya Patel</h3>
+                        <p class="text-xs text-gray-500">Designer</p>
                     </div>
-
                 </div>
-                
 
+                <p class="text-xs text-gray-400">I CAN TEACH</p>
+                <div class="bg-blue-100 text-blue-600 px-3 py-1 rounded mt-1 inline-block text-sm">
+                    Graphic Design
+                </div>
 
+                <p class="text-xs text-gray-400 mt-3">I WANT TO LEARN</p>
+                <div class="bg-orange-100 text-orange-600 px-3 py-1 rounded mt-1 inline-block text-sm">
+                    Public Speaking
+                </div>
 
-                <!-- Another User Card -->
-                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+                <div class="mt-4 space-y-2">
 
-                    <div class="flex flex-col items-center text-center">
-                        <img src="https://via.placeholder.com/120"
-                             class="rounded-full w-28 h-28 object-cover mb-4 shadow">
+                    <a asp-controller="Profile"
+                       asp-action="ViewProfile"
+                       class="block text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                        View Profile
+                    </a>
 
-                        <h2 class="text-xl font-semibold">Ananya Patel</h2>
-
-                        <p class="text-green-600 mt-3 font-medium">
-                            Teaches: Graphic Design
-                        </p>
-
-                        <p class="text-purple-600 mt-1 font-medium">
-                            Wants: Public Speaking
-                        </p>
-
-                        <span class="mt-3 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
-                            Adobe Certified 🏅
-                        </span>
-
-                        <button class="mt-5 bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition">
-                            🔄 Send Swap Request
-                        </button>
-                        <a asp-controller="Profile"
-                           asp-action="ViewProfile"
-                           class="mt-3 inline-block bg-gray-600 text-white px-5 py-2 rounded-md hover:bg-gray-700 transition">
-                            👤 View Profile
-                        </a>
-                    </div>
+                    <button class="w-full border py-2 rounded text-gray-600 hover:bg-gray-100">
+                        Send Swap Request
+                    </button>
 
                 </div>
 
-                    <!-- User Card -->
-                    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
+            </div>
 
-                        <div class="flex flex-col items-center text-center">
-                            <img src="https://via.placeholder.com/120"
-                                 class="rounded-full w-28 h-28 object-cover mb-4 shadow">
 
-                            <h2 class="text-xl font-semibold">Rahul Sharma</h2>
+            <!-- CARD 3 -->
+            <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
 
-                            <p class="text-green-600 mt-3 font-medium">
-                                Teaches: Web Development
-                            </p>
-
-                            <p class="text-purple-600 mt-1 font-medium">
-                                Wants: Data Science
-                            </p>
-
-                            <span class="mt-3 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
-                                Certified Developer 🏅
-                            </span>
-
-                            <button class="mt-5 bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition">
-                                🔄 Send Swap Request
-                            </button>
-                        <a asp-controller="Profile"
-                           asp-action="ViewProfile"
-                           class="mt-3 inline-block bg-gray-600 text-white px-5 py-2 rounded-md hover:bg-gray-700 transition">
-                            👤 View Profile
-                        </a>
-                        </div>
-
+                <div class="flex items-center gap-3 mb-3">
+                    <img src="https://i.pravatar.cc/40?img=12" class="rounded-full" />
+                    <div>
+                        <h3 class="font-semibold">Alex Thomas</h3>
+                        <p class="text-xs text-gray-500">Photographer</p>
                     </div>
+                </div>
 
+                <p class="text-xs text-gray-400">I CAN TEACH</p>
+                <div class="bg-blue-100 text-blue-600 px-3 py-1 rounded mt-1 inline-block text-sm">
+                    Photography
+                </div>
+
+                <p class="text-xs text-gray-400 mt-3">I WANT TO LEARN</p>
+                <div class="bg-orange-100 text-orange-600 px-3 py-1 rounded mt-1 inline-block text-sm">
+                    Video Editing
+                </div>
+
+                <div class="mt-4 space-y-2">
+
+                    <a asp-controller="Profile"
+                       asp-action="ViewProfile"
+                       class="block text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+                        View Profile
+                    </a>
+
+                    <button class="w-full border py-2 rounded text-gray-600 hover:bg-gray-100">
+                        Send Swap Request
+                    </button>
 
                 </div>
+
+            </div>
+
 
         </div>
 
     </div>
-
-</body>
-</html>
+    
+</div>
