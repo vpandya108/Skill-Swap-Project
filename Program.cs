@@ -1,9 +1,25 @@
+using Microsoft.EntityFrameworkCore;
+using Skill_Swap_Project.Data;
+
 //first flow goes in this
 //third party use mention in this file.
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Register DbContext with SQLite
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Add Session services
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -20,6 +36,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseSession(); // Required for session-based auth
 app.UseAuthorization();
 
 app.MapControllerRoute(

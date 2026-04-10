@@ -1,4 +1,4 @@
-﻿@{
+@{
     Layout = null;
 }
 
@@ -63,7 +63,14 @@
                     Start your learning journey with Skill Swap today
                 </p>
 
-                <form method="post" asp-controller="Account" asp-action="CreateProfile">
+                @if (ViewBag.Error != null)
+                {
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                        <span class="block sm:inline">@ViewBag.Error</span>
+                    </div>
+                }
+
+                <form method="post" asp-controller="Account" asp-action="SignUp">
                     <!-- Full Name -->
                     <div>
                         <label class="block font-medium mb-2">Full Name</label>
@@ -133,7 +140,7 @@
 
                 <p class="text-center mt-6 text-gray-600">
                     Already have an account?
-                    <a href="/Account/Login"
+                    <a asp-controller="Account" asp-action="Login"
                        class="text-blue-600 font-semibold">
                         login here
                     </a>

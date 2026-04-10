@@ -1,0 +1,163 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="flex h-screen bg-gray-100">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="w-80 bg-white border-r">
+
+        <!-- Profile -->
+        <div class="flex items-center p-4 border-b">
+            <img src="https://i.pravatar.cc/40" class="rounded-full mr-3">
+            <div>
+                <p class="font-semibold">John drcuz</p>
+                <p class="text-green-500 text-sm">Online</p>
+            </div>
+        </div>
+
+        <!-- Search -->
+        <div class="p-4">
+            <input type="text"
+                   placeholder="Search Messages..."
+                   class="w-full bg-gray-100 p-2 rounded-lg">
+        </div>
+
+        <!-- Chat List -->
+        <div class="space-y-2 px-3">
+
+            <!-- Active Chat -->
+            <div class="flex items-center p-3 bg-blue-100 rounded-lg cursor-pointer">
+
+                <img src="https://i.pravatar.cc/41"
+                     class="w-10 h-10 rounded-full mr-3">
+
+                <div class="flex-1">
+                    <p class="font-semibold">Sarah Milaar</p>
+                    <p class="text-sm text-gray-500">
+                        The final design looks great...
+                    </p>
+                </div>
+
+                <span class="text-xs text-gray-500">
+                    12:45 PM
+                </span>
+
+            </div>
+
+            <!-- Chat -->
+            <div class="flex items-center p-3 hover:bg-gray-100 rounded-lg cursor-pointer">
+
+                <img src="https://i.pravatar.cc/42"
+                     class="w-10 h-10 rounded-full mr-3">
+
+                <div class="flex-1">
+                    <p class="font-semibold">Design Team</p>
+                    <p class="text-sm text-gray-500">
+                        Jordan: I've edited Figma files...
+                    </p>
+                </div>
+
+                <span class="text-xs text-gray-500">
+                    11:30 PM
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- New Message Button -->
+        <div class="p-4">
+            <button class="w-full bg-blue-600 text-white py-3 rounded-lg">
+                New Message
+            </button>
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT CHAT AREA -->
+    <div class="flex-1 flex flex-col">
+
+        <!-- Chat Header -->
+        <div class="flex items-center justify-between p-4 border-b bg-white">
+
+            <div class="flex items-center">
+
+                <img src="https://i.pravatar.cc/41"
+                     class="w-10 h-10 rounded-full mr-3">
+
+                <div>
+                    <p class="font-semibold">Sarah Milaar</p>
+                    <p class="text-green-500 text-sm">
+                        Active Now
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="space-x-4 text-gray-600 text-xl">
+                📞 🎥 🔍
+            </div>
+
+        </div>
+
+
+        <!-- Messages -->
+        <div class="flex-1 p-6 space-y-4 overflow-y-auto">
+
+            <!-- Incoming -->
+            <div class="flex items-start space-x-2">
+
+                <img src="https://i.pravatar.cc/41"
+                     class="w-8 h-8 rounded-full">
+
+                <div class="bg-gray-200 p-3 rounded-xl max-w-md">
+                    Hey! Have you seen the latest UI components
+                    I shared this morning?
+                </div>
+
+            </div>
+
+            <p class="text-center text-gray-400 text-sm">
+                10:15 AM
+            </p>
+
+
+            <!-- Outgoing -->
+            <div class="flex justify-end">
+
+                <div class="bg-blue-500 text-white p-3 rounded-xl max-w-md">
+                    Not yet, just getting started on my reviews.
+                    Send me the link again just in case?
+                </div>
+
+            </div>
+
+            <p class="text-right text-gray-400 text-sm">
+                10:16 AM ✓✓
+            </p>
+
+        </div>
+
+
+        <!-- Message Input -->
+        <div class="p-4 border-t bg-white flex items-center space-x-3">
+
+            <button class="text-xl">➕</button>
+
+            <input type="text"
+                   placeholder="Type Something..."
+                   class="flex-1 bg-gray-100 p-3 rounded-full">
+
+            <button class="bg-blue-600 text-white px-6 py-3 rounded-full">
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

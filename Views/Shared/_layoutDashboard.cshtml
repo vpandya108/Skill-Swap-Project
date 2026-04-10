@@ -1,4 +1,4 @@
-﻿@{
+@{
     Layout = null;
 }
 
@@ -36,26 +36,21 @@
                     Explore
                 </a>
 
-                <a asp-controller="MySwap" asp-action="Swaps"
+                <a asp-controller="Swap" asp-action="MySwaps"
                    class="text-gray-700 hover:text-blue-600">
                     My Swaps
                 </a>
 
-                <a asp-controller="Message" asp-action="Chat"
-                   class="text-gray-700 hover:text-blue-600">
-                    Messages
-                </a>
-
             </div>
 
-            <!-- ACCOUNT ICON -->
-            <div class="flex items-center gap-4">
+            <!-- ACCOUNT & LOGOUT -->
+            <div class="flex items-center gap-6">
 
-                <a asp-controller="Profile" asp-action="Index"
-                   class="text-gray-700 hover:text-blue-600">
+                <a asp-controller="Profile" asp-action="Userprofile"
+                   class="text-gray-700 hover:text-blue-600" title="My Profile">
 
                     <svg xmlns="http://www.w3.org/2000/svg"
-                         class="w-8 h-8"
+                         class="w-7 h-7"
                          fill="none"
                          viewBox="0 0 24 24"
                          stroke="currentColor">
@@ -67,6 +62,11 @@
 
                     </svg>
 
+                </a>
+
+                <a asp-controller="Account" asp-action="Logout"
+                   class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-red-600 transition">
+                    Logout
                 </a>
 
             </div>

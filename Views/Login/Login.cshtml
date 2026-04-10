@@ -1,4 +1,4 @@
-﻿@{
+@{
     Layout = null;
 }
 
@@ -16,7 +16,7 @@
 
         <!-- LEFT SIDE IMAGE -->
         <div class="hidden md:flex w-1/2 relative">
-            <img src="/images/login.jpg" class="w-full h-full object-cover" />
+            <img src="~/images/Login.png" class="w-full h-full object-cover" />
 
             <div class="absolute bottom-16 left-12 text-white">
                 <h1 class="text-4xl font-bold mb-4">
@@ -52,6 +52,13 @@
                 <p class="text-gray-500 mb-6">
                     Please enter your details to sign in.
                 </p>
+
+                @if (ViewBag.Error != null)
+                {
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                        <span class="block sm:inline">@ViewBag.Error</span>
+                    </div>
+                }
 
                 <!-- FORM -->
                 <form method="post" asp-action="Login">
@@ -100,7 +107,7 @@
                         </div>
 
                         <div class="text-right mt-2">
-                            <a href="#" class="text-blue-600 text-sm font-medium">
+                            <a asp-controller="Login" asp-action="ForgotPassword" class="text-blue-600 text-sm font-medium">
                                 Forget Password?
                             </a>
                         </div>
@@ -131,17 +138,20 @@
                     </span>
                     <div class="flex-grow border-t"></div>
                 </div>
+                <!--continue with google button and in that google -->
 
-                <!-- Google Button -->
                 <button class="w-full bg-gray-100 py-3 rounded-md flex items-center justify-center gap-3 hover:bg-gray-200 transition">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                         class="w-5">
+
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg"
+                         class="w-5 h-5" />
+
                     Continue with Google
+
                 </button>
 
                 <p class="text-center mt-6 text-gray-600">
                     Don’t have an account?
-                    <a href="/Account/Register"
+                    <a asp-controller="Account" asp-action="SignUp"
                        class="text-blue-600 font-semibold">
                         Create an account
                     </a>

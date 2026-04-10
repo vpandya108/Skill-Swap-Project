@@ -1,0 +1,169 @@
+@model List<Skill_Swap_Project.Models.SwapRequest>
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+    var incoming = ViewBag.Incoming as List<Skill_Swap_Project.Models.SwapRequest>;
+    var users = ViewBag.Users as Dictionary<int, string>;
+    var userSkills = ViewBag.UserSkills as Dictionary<int, string>;
+}
+
+<div class="flex min-h-screen bg-gray-100">
+
+    <!-- Sidebar -->
+    <div class="w-64 bg-white shadow-lg p-6">
+
+        <h2 class="text-2xl font-bold text-blue-600 mb-10">SkillSwap</h2>
+
+        <ul class="space-y-4">
+
+            <li>
+                <a asp-controller="Dashboard" asp-action="DashBoardview" class="text-gray-600 hover:text-blue-600">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Swap" asp-action="MySwaps">
+                    My Swaps
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Profile" asp-action="Userprofile" class="text-gray-600 hover:text-blue-600">
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a asp-controller="Explore" asp-action="Exploreview" class="text-gray-600 hover:text-blue-600">
+                    Find a Skill
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="flex-1 p-8">
+
+        <!-- Title -->
+        <h1 class="text-3xl font-bold mb-6">My Swaps</h1>
+
+
+        <!-- Incoming Requests -->
+        <h2 class="text-xl font-semibold mb-4">Incoming Requests</h2>
+
+        <div class="space-y-4 mb-10">
+            @if (incoming != null && incoming.Any())
+            {
+                @foreach (var req in incoming.Where(r => r.Status == "Pending"))
+                {
+                    <div class="bg-white p-4 rounded-xl shadow flex justify-between items-center border-l-4 border-blue-500">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold mr-4">
+                                @(users != null && users.ContainsKey(req.SenderId) ? users[req.SenderId].Substring(0, 1).ToUpper() : "?")
+                            </div>
+                            <div>
+                                <p class="font-medium">
+                                    @(users != null && users.ContainsKey(req.SenderId) ? users[req.SenderId] : "Unknown User") wants to swap
+                                </p>
+                                <p class="text-sm text-gray-500">
+                                    Offers: @(userSkills != null && userSkills.ContainsKey(req.SenderId) ? userSkills[req.SenderId] : "Skill")
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-2">
+                            <form asp-controller="Swap" asp-action="RespondToRequest" method="post">
+                                <input type="hidden" name="requestId" value="@req.Id" />
+                                <input type="hidden" name="status" value="Accepted" />
+                                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">
+                                    Accept
+                                </button>
+                            </form>
+
+                            <form asp-controller="Swap" asp-action="RespondToRequest" method="post">
+                                <input type="hidden" name="requestId" value="@req.Id" />
+                                <input type="hidden" name="status" value="Declined" />
+                                <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+                                    Decline
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-gray-500 italic">No incoming requests at the moment.</p>
+            }
+        </div>
+
+
+        <!-- Outgoing Requests -->
+        <h2 class="text-xl font-semibold mb-4">Outgoing Requests</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var req in Model)
+                {
+                    <div class="bg-white rounded-xl shadow p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-semibold text-lg">
+                                Swapping with @(users != null && users.ContainsKey(req.ReceiverId) ? users[req.ReceiverId] : "Partner")
+                            </h3>
+                            <span class="px-3 py-1 rounded-full text-sm @(req.Status == "Accepted" ? "bg-green-100 text-green-700" : req.Status == "Declined" ? "bg-red-100 text-red-700" : "bg-yellow-100 text-yellow-700")">
+                                @req.Status
+                            </span>
+                        </div>
+
+                        <p class="text-gray-500 text-sm mb-4">
+                            Partner Skill: @(userSkills != null && userSkills.ContainsKey(req.ReceiverId) ? userSkills[req.ReceiverId] : "Expertise")
+                        </p>
+
+                        <div class="text-xs text-gray-400">
+                            Requested on: @req.RequestDate.ToShortDateString()
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="col-span-2 text-center py-8 bg-white rounded-xl shadow">
+                    <p class="text-gray-500">You haven't sent any swap requests yet.</p>
+                </div>
+            }
+        </div>
+
+
+        <!-- Active Matches (Accepted Requests) -->
+        <h2 class="text-xl font-semibold mb-4">Active Swaps</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            @{
+                var currentUserId = Context.Session.GetInt32("UserId") ?? 0;
+                var activeSwaps = (incoming?.Where(r => r.Status == "Accepted") ?? Enumerable.Empty<Skill_Swap_Project.Models.SwapRequest>())
+                                  .Concat(Model?.Where(r => r.Status == "Accepted") ?? Enumerable.Empty<Skill_Swap_Project.Models.SwapRequest>())
+                                  .ToList();
+            }
+            @if (activeSwaps != null && activeSwaps.Any())
+            {
+                @foreach (var swap in activeSwaps)
+                {
+                    var partnerId = swap.SenderId == currentUserId ? swap.ReceiverId : swap.SenderId;
+                    <div class="bg-blue-600 text-white rounded-xl shadow p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-bold text-lg">Active Match</h3>
+                            <span class="bg-white/20 px-3 py-1 rounded-full text-sm">Learning</span>
+                        </div>
+                        <p class="mb-4">You are now connected with <b>@((users != null && users.ContainsKey(partnerId)) ? users[partnerId] : "Partner")</b>!</p>
+                        <a href="#" class="inline-block bg-white text-blue-600 px-4 py-2 rounded font-semibold hover:bg-blue-50">
+                            Contact Partner
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
