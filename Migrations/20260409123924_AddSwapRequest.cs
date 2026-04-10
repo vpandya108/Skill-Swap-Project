@@ -24,7 +24,6 @@ namespace Skill_Swap_Project.Migrations
                 type: "TEXT",
                 nullable: false,
                 defaultValue: "");
-
             migrationBuilder.CreateTable(
                 name: "SwapRequests",
                 columns: table => new
